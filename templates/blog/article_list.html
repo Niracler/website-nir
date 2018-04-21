@@ -1,0 +1,32 @@
+{% extends "blog/article_base.html" %}
+{% load custom_markdown %}
+
+{% block nav_blog_active %}
+    active
+{% endblock %}
+
+{% block article_content %}
+    {#循环#}
+    {% for article in articles %}
+        <h1>
+            <a href="{% url 'article_detail' article.pk %}">
+                {{ article.title }}
+            </a>
+        </h1>
+        <div>
+            <p>
+                Time：{{ article.date_time }}
+                author：{{ article.author }}
+                <a class="my_category" href="{% url "articles_with_category" article.type_name %}">
+                    {{ article.type_name }}
+                </a>
+            </p>
+        </div>
+        <div>
+            {{ article.content| custom_markdown |truncatewords_html:15 }}
+        </div>
+
+    {% empty %}
+        <p>-- 暂无博客，敬请期待 --</p>
+    {% endfor %}
+{% endblock %}
