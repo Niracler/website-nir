@@ -16,6 +16,6 @@ PROJECT_DIR = dirname(dirname(abspath(__file__)))  # 3
 
 sys.path.insert(0, PROJECT_DIR)  # 5
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "website_py.py.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "website_py.settings")
 
 application = get_wsgi_application()
