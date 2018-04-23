@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+    <title>Niracler's News</title>
+    <meta name="description" content="">
+
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="/static/css/zerogrid.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/menu.css">
+    <link rel="stylesheet" href="/static/css/responsiveslides.css">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script src="/static/js/jquery-latest.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/jquery183.min.js"></script>
+    <script src="/static/js/responsiveslides.min.js"></script>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow
+            $("#slider").responsiveSlides({
+                auto: true,
+                pager: false,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+        });
+    </script>
+
+
+    <!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+<div class="wrap-body">
+
+    <!--////////////////////////////////////Header-->
+    <header>
+        <div class="wrap-header zerogrid">
+            <div class="row">
+                <div id="cssmenu">
+                    <ul>
+                        <li class='active'>
+                            <a href="#">Home</a>
+                        </li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--////////////////////////////////////Container-->
+    <section id="container" class="home-page">
+        <div class="wrap-container clearfix">
+            <div id="main-content">
+                <section class="content-box box-1 box-style-1"><!--Start Box-->
+                    <div class="wrap-box">
+                        <div class="zerogrid">
+                            <div class="row">
+                                <div class="col-1-3">
+                                    <div class="wrap-col">
+                                        <div class="row">
+
+                                            {% block new_content %}
+                                            {% endblock %}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!--////////////////////////////////////Footer-->
+    <footer>
+        <div class="zerogrid wrap-footer">
+            <div class="row">
+                <div class="col-1-4 col-footer-1">
+                    <div class="wrap-col">
+                        <h3>About Us</h3>
+                        <p>Ut volutpat consectetur aliquam. Curabitur auctor in nis ulum ornare. Sed consequat, augue
+                            condimentum fermentum gravida, metus elit vehicula dui.</p>
+                    </div>
+                </div>
+                <div class="col-1-4 col-footer-2">
+                    <div class="wrap-col">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Romantic</a></li>
+                            <li><a href="#">Cartoon</a></li>
+                            <li><a href="#">Zombies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1-4 col-footer-3">
+                    <div class="wrap-col">
+                        <h3>Flickr Photos</h3>
+                        <div class="row">
+                            <div class="col-1-3">
+                                <div class="wrap-col">
+                                    <a href="#"><img src="/static/images/6.jpg"/></a>
+                                    <a href="#"><img src="/static/images/7.jpg"/></a>
+                                    <a href="#"><img src="/static/images/8.jpg"/></a>
+                                </div>
+                            </div>
+                            <div class="col-1-3">
+                                <div class="wrap-col">
+                                    <a href="#"><img src="/static/images/9.jpg"/></a>
+                                    <a href="#"><img src="/static/images/6.jpg"/></a>
+                                    <a href="#"><img src="/static/images/7.jpg"/></a>
+                                </div>
+                            </div>
+                            <div class="col-1-3">
+                                <div class="wrap-col">
+                                    <a href="#"><img src="/static/images/6.jpg"/></a>
+                                    <a href="#"><img src="/static/images/7.jpg"/></a>
+                                    <a href="#"><img src="/static/images/8.jpg"/></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-4 col-footer-4">
+                    <div class="wrap-col">
+                        <h3>Contact</h3>
+                        <span><i class="fa fa-envelope"></i> example@sports-club.com</span>
+                        <span><i class="fa fa-phone"></i> 1-800-123-1234; 1-800-123-5678</span>
+                        <span><i class="fa fa-map-marker"></i> Brooklyn, NY 10036, United States</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright">
+        <div class="zerogrid wrapper">
+            Copyright &copy; 2016.Company name All rights reserved.More Templates
+            <a href="http://www.cssmoban.com/"
+               target="_blank"
+               title="模板之家">模板之家
+            </a> - Collect
+            from
+            <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+            <ul class="quick-link">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

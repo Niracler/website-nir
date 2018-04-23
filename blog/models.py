@@ -11,7 +11,7 @@ class ArticleType(models.Model):
     def __str__(self):
         return self.type_name
 
-# 文章后台类
+# 文章类后台类
 class ArticleTypeAdmin(admin.ModelAdmin):
     list_display = ("type_name", )
 
@@ -27,7 +27,6 @@ class Article(models.Model):
     # 如果要将一个类的实例转化为str，则要定义__str__方法,相当于java中的toString
     def __str__(self):
         return self.title
-
 
 
 # 文章后台类

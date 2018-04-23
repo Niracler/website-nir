@@ -1,0 +1,36 @@
+{% extends "news/base.html" %}
+
+{% block new_content %}
+    {#循环#}
+    {% for new in news %}
+        <div class="item">
+            <div class="item-content">
+                <a href="{{ new.url }}">
+                    <h3>
+                        {{ new.title }}
+                    </h3>
+                </a>
+                <p>
+                    {{ new.content| truncatewords_html:15 }}
+                </p>
+                <a href="{{ new.url }}">Read More</a>
+            </div>
+        </div>
+    {% empty %}
+        <p>-- 暂无博客，敬请期待 --</p>
+    {% endfor %}
+
+    {% if news.object_list and news.paginator.num_pages > 1 %}
+        <div>
+            <ul class="pager">
+                {% if news.has_previous %}
+                    <li><a href="?page={{ news.previous_page_number }}">上一页</a></li>
+                {% endif %}
+
+                {% if news.has_next %}
+                    <li><a href="?page={{ news.next_page_number }}">下一页</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}
