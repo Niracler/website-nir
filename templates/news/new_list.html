@@ -19,16 +19,16 @@
             <div class="card mb-4">
                 {#                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">#}
                 <div class="card-body">
-                    <h2 class="card-title">
+                    <h3 class="card-title">
                         <a href="{{ new.url }}">
                             {{ new.title }}
                         </a>
-                    </h2>
+                    </h3>
                     <p class="card-text">{{ new.content| truncatewords_html:15 }}</p>
                     <a href="{{ new.url }}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
                 <div class="card-footer text-muted">
-                    Posted on 000 by
+                    Posted on {{ new.date_time }} by
                     <a href="">888</a>
                 </div>
             </div>

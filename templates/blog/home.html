@@ -40,7 +40,11 @@
             <div class="card mb-4">
 {#                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">#}
                 <div class="card-body">
-                    <h2 class="card-title">{{ article.title }}</h2>
+                    <h3 class="card-title">
+                        <a href="{% url 'detail' article.pk%}">
+                            {{ article.title }}
+                        </a>
+                    </h3>
                     <p class="card-text">{{ article.content| custom_markdown |truncatewords_html:15 }}</p>
                     <a href="{% url 'detail' article.pk %}" class="btn btn-primary">Read More &rarr;</a>
                 </div>

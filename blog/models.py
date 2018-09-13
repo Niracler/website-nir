@@ -4,6 +4,8 @@ from django.db import models
 
 
 # 这里是定义数据库的元对象,每一个对象都要继承django.db.models.Model
+from blog import timestamp
+
 
 class ArticleType(models.Model):
     type_name = models.CharField(max_length=15)
@@ -19,7 +21,7 @@ class ArticleTypeAdmin(admin.ModelAdmin):
 class Article(models.Model):
     # 对象的属性
     title = models.CharField(max_length=100)  # 标题,限定长度最多一百
-    date_time = models.TimeField(auto_now_add=True)  # 发布日期
+    date_time = timestamp.UnixTimestampField()  # 发布日期
     content = models.TextField(blank=True, null=True)  # 内容
     author = models.ForeignKey(User, on_delete=models.DO_NOTHING, default=1)
     type_name = models.ForeignKey(ArticleType, on_delete=models.DO_NOTHING, default=1)
