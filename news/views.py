@@ -9,7 +9,7 @@ def new_list(request):
     context = {}
 
     news = New.objects.all().order_by('-id')  # 获取全部的New对象
-    paginator = Paginator(news, 10)  # 每页显示两个
+    paginator = Paginator(news, 10)
     page = request.GET.get('page')
 
     try:
