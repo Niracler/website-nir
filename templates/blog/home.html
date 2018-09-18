@@ -18,30 +18,13 @@
 
         {#循环#}
         {% for article in articles %}
-            {#        <h1>#}
-            {#            <a href="{% url 'article_detail' article.pk %}">#}
-            {#                {{ article.title }}#}
-            {#            </a>#}
-            {#        </h1>#}
-            {#        <div>#}
-            {#            <p>#}
-            {#                Time：{{ article.date_time }}#}
-            {#                author：{{ article.author }}#}
-            {#                <a class="my_category" href="{% url "articles_with_category" article.type_name %}">#}
-            {#                    {{ article.type_name }}#}
-            {#                </a>#}
-            {#            </p>#}
-            {#        </div>#}
-            {#        <div>#}
-            {#            {{ article.content| custom_markdown |truncatewords_html:15 }}#}
-            {#        </div>#}
 
             <!-- Blog Post -->
             <div class="card mb-4">
-{#                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">#}
+                {#                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">#}
                 <div class="card-body">
                     <h3 class="card-title">
-                        <a href="{% url 'detail' article.pk%}">
+                        <a href="{% url 'detail' article.pk %}">
                             {{ article.title }}
                         </a>
                     </h3>
@@ -49,8 +32,16 @@
                     <a href="{% url 'detail' article.pk %}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
                 <div class="card-footer text-muted">
+
+
                     Posted on {{ article.date_time }} by
-                    <a href="">{{ article.author }}</a>
+                    <a href="">
+                        {{ article.author }}
+                    </a>
+                    &nbsp
+                    <a class="my_category" href="{% url "articles_with_category" article.type_name %}">
+                        {{ article.type_name }}
+                    </a>
                 </div>
             </div>
 
@@ -59,20 +50,19 @@
         {% endfor %}
 
         <!-- Pagination -->
-        <!-- Pagination -->
         {% if articles.object_list and articles.paginator.num_pages > 1 %}
             <div>
                 <ul class="pagination justify-content-center mb-4">
                     {% if articles.has_previous %}
                         <li class="page-item">
                             <a class="page-link" href="?page={{ articles.previous_page_number }}">
-                                 &larr; Newer
+                                &larr; Newer
                             </a>
                         </li>
                     {% else %}
                         <li class="page-item disabled">
                             <a class="page-link">
-                                 &larr; Newer
+                                &larr; Newer
                             </a>
                         </li>
                     {% endif %}
@@ -80,13 +70,13 @@
                     {% if articles.has_next %}
                         <li class="page-item">
                             <a class="page-link" href="?page={{ articles.next_page_number }}">
-                                 Older &rarr;
+                                Older &rarr;
                             </a>
                         </li>
                     {% else %}
                         <li class="page-item disabled">
                             <a class="page-link">
-                                 Older &rarr;
+                                Older &rarr;
                             </a>
                         </li>
                     {% endif %}
@@ -95,5 +85,14 @@
         {% endif %}
 
     </div>
-
 {% endblock %}
+
+{% block categories %}
+    {% for category in categories %}
+        <a class="my_category" href="{% url "articles_with_category" category %}">
+            {{ category }}
+        </a>
+    {% empty %}
+    {% endfor %}
+{% endblock %}
+

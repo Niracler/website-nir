@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django.db import models
 
-
 # 这里是定义数据库的元对象,每一个对象都要继承django.db.models.Model
 from blog import timestamp
 
@@ -13,9 +12,11 @@ class ArticleType(models.Model):
     def __str__(self):
         return self.type_name
 
+
 # 文章类后台类
 class ArticleTypeAdmin(admin.ModelAdmin):
-    list_display = ("type_name", )
+    list_display = ("type_name",)
+
 
 # 文章类
 class Article(models.Model):
