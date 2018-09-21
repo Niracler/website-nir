@@ -46,12 +46,14 @@
             var gitalk = new Gitalk({
 
                 // gitalk的主要参数
-                clientID: `ed86f0b4b42efdc154c1`,
-                clientSecret: `6f3cd21313d6b5654a33bf29ba31f4c01a227e97`,
-                repo: `website_py`,
+                clientID: 'ed86f0b4b42efdc154c1',
+                clientSecret: '6f3cd21313d6b5654a33bf29ba31f4c01a227e97',
+                repo: 'website_py',
                 owner: 'niracler',
                 admin: ['niracler'],
-                id: {{ article_obj.pk }},
+                id: 'demo',
+
+                distractionFreeMode: true,
             });
             gitalk.render('gitalk-container');
         </script>
