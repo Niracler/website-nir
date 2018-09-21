@@ -24,12 +24,12 @@
         <!-- Date/Time -->
         <p>Posted on {{ article_obj.date_time }}</p>
 
-{#        <hr>#}
+        {#        <hr>#}
 
-{#        <!-- Preview Image -->#}
-{#        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">#}
+        {#        <!-- Preview Image -->#}
+        {#        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">#}
 
-{#        <hr>#}
+        {#        <hr>#}
 
         <!-- Post Content -->
         <div>
@@ -38,66 +38,90 @@
 
         <hr>
 
-        <!-- Comments Form -->
-        <div class="card my-4">
-            <h5 class="card-header">Leave a Comment:</h5>
-            <div class="card-body">
-                <form>
-                    <div class="form-group">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-        </div>
+        <!-- Link Gitalk 的支持文件  -->
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+        <div id="gitalk-container"></div>
+        <script type="text/javascript">
+            var gitalk = new Gitalk({
 
-        <!-- Single Comment -->
-        <div class="media mb-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-                <h5 class="mt-0">Commenter Name</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                odio,
-                vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-                Donec
-                lacinia congue felis in faucibus.
-            </div>
-        </div>
+                // gitalk的主要参数
+                clientID: `ed86f0b4b42efdc154c1`,
+                clientSecret: `6f3cd21313d6b5654a33bf29ba31f4c01a227e97`,
+                repo: `website_py`,
+                owner: 'niracler',
+                admin: ['niracler'],
+                id: {{ article_obj.pk }},
+            });
+            gitalk.render('gitalk-container');
+        </script>
+        <!-- Gitalk end -->
 
-        <!-- Comment with nested comments -->
-        <div class="media mb-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-                <h5 class="mt-0">Commenter Name</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                odio,
-                vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-                Donec
-                lacinia congue felis in faucibus.
+{#        <!-- Comments Form -->#}
+{#        <div class="card my-4">#}
+{#            <h5 class="card-header">Leave a Comment:</h5>#}
+{#            <div class="card-body">#}
+{#                <form>#}
+{#                    <div class="form-group">#}
+{#                        <textarea class="form-control" rows="3"></textarea>#}
+{#                    </div>#}
+{#                    <button type="submit" class="btn btn-primary">Submit</button>#}
+{#                </form>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        <!-- Single Comment -->#}
+{#        <div class="media mb-4">#}
+{#            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">#}
+{#            <div class="media-body">#}
+{#                <h5 class="mt-0">Commenter Name</h5>#}
+{#                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus#}
+{#                odio,#}
+{#                vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.#}
+{#                Donec#}
+{#                lacinia congue felis in faucibus.#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        <!-- Comment with nested comments -->#}
+{#        <div class="media mb-4">#}
+{#            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">#}
+{#            <div class="media-body">#}
+{#                <h5 class="mt-0">Commenter Name</h5>#}
+{#                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus#}
+{#                odio,#}
+{#                vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.#}
+{#                Donec#}
+{#                lacinia congue felis in faucibus.#}
+{##}
+{#                <div class="media mt-4">#}
+{#                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">#}
+{#                    <div class="media-body">#}
+{#                        <h5 class="mt-0">Commenter Name</h5>#}
+{#                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras#}
+{#                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi#}
+{#                        vulputate fringilla. Donec lacinia congue felis in faucibus.#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="media mt-4">#}
+{#                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">#}
+{#                    <div class="media-body">#}
+{#                        <h5 class="mt-0">Commenter Name</h5>#}
+{#                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras#}
+{#                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi#}
+{#                        vulputate fringilla. Donec lacinia congue felis in faucibus.#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#            </div>#}
+{#        </div>#}
 
-                <div class="media mt-4">
-                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                    <div class="media-body">
-                        <h5 class="mt-0">Commenter Name</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
-                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-                        vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </div>
-
-                <div class="media mt-4">
-                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                    <div class="media-body">
-                        <h5 class="mt-0">Commenter Name</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
-                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-                        vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
     </div>
+
+    <!-- Gitalk 评论 start  -->
+
+
 
 {% endblock %}
