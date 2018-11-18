@@ -26,7 +26,7 @@ SECRET_KEY = 'u)7ydy@bx&oul5&5*w--ueh-$@@^b+zgd4$##ic-okk7q7(n#j'
 DEBUG = True
 
 # 允许以，，访问主机？
-ALLOWED_HOSTS = ['niracler.com','www.niracler.com','127.0.0.1']
+ALLOWED_HOSTS = ['niracler.com','www.niracler.com','127.0.0.1', "*",]
 
 
 # Application definition
@@ -79,11 +79,10 @@ WSGI_APPLICATION = 'website_py.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'web_db',
-        'USER': 'team',
-        'PASSWORD': '12345678',
-        'HOST': 'niracler.com',
-        'PORT': '3306',
+        'NAME': 'dataname',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': 'db',
     }
 }
 
@@ -127,4 +126,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 # STATIC_ROOT = os.path.join(BASE_DIR,'static')
-
