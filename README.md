@@ -18,7 +18,7 @@ docker-compose up -d web    #启动django
 docker-compose up -d nginx  #启动nginx
 ```
 注意:
-> 1. 本地调试不需要启动nginx, 端口号8000  
+> 1. 本地调试不需要启动nginx, 端口号8000, 没有静态文件  
 > 2. nginx启用的是https, 要自行添加ssl证书
 
 ## 参考文章
