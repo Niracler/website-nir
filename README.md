@@ -6,7 +6,19 @@ web方面的轮子 django + nginx + mysql + docker + gunicorn
  * [docker部署说明](#docker部署说明)
  * [参考文章](#参考文章)
 
-## IDE部署说明：    
+## IDE运行说明：    
+ - 修改settings.py, 将数据库的host改为127.0.0.1
+ - 修改docker-compose.yml, 将3306端口映射出来
+ - 启动并建立数据库
+```bash
+docker-compose up -d db     #启动数据库
+python3 manage.py migrate
+python3 manage.py makemigrations
+```
+ - 启动项目
+```bash
+manage.py runserver 8000
+```
 
 ## docker部署说明
 
