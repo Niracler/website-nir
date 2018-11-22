@@ -19,6 +19,7 @@ WORKDIR $DOCKER_SRC
 EXPOSE 8000
 
 RUN  pip3 install gunicorn
+RUN  pip3 install django
 
 
 #install any needed pacakges in requirements.txt，你要把所有需要安装的Python模块加到这文件中。
