@@ -24,6 +24,6 @@ RUN  pip3 install django==2.1.3  -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 #install any needed pacakges in requirements.txt，你要把所有需要安装的Python模块加到这文件中。
 COPY requirements.txt ./
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
