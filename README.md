@@ -4,9 +4,16 @@ web方面的轮子 django + nginx + mysql + docker + gunicorn
 ## 目录
  * [IDE部署说明](#IDE部署说明)
  * [docker部署说明](#docker部署说明)
+ * [联系](#联系)
  * [参考文章](#参考文章)
 
 ## IDE运行说明：    
+ - 安装依赖的包
+ ```bash
+ pip3 install --upgrade pip
+ pip3 install -r  requirements.txt
+ ```
+
  - 修改settings.py, 将数据库的host改为127.0.0.1
  - 修改docker-compose.yml, 将3306端口映射出来
  - 启动并建立数据库
@@ -30,8 +37,14 @@ docker-compose up -d web    #启动django
 docker-compose up -d nginx  #启动nginx
 ```
 注意:
-> 1. 本地调试不需要启动nginx, 端口号8000, 没有静态文件  
+> 1. 本地调试不需要启动, nginx, 端口号8000, 没有静态文件  
 > 2. nginx启用的是https, 要自行添加ssl证书
+
+## 联系
+项目需要完善的地方还有很多，如有BUG或者更好的建议欢迎提出
+
+* [issue](https://github.com/Niracler/website-nir/issues)
+* mail:niracler@gmail.com
 
 ## 参考文章
 
