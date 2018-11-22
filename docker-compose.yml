@@ -2,16 +2,19 @@ version: "2"
 services:
     db:
        image: mysql:5
+       container_name: website-nir_db
        environment:
           MYSQL_DATABASE: dataname
           MYSQL_ROOT_PASSWORD: 123456
        volumes:
          - /srv/db:/var/lib/mysql
+         - ./db:/db
        restart: always
        ports:
          - "3333:3306" # 将3306映射到3333, 供其他容器使用
     web:
        build: .
+       container_name: website-nir_web
        volumes:
        - .:/usr/src/app
        - ./logs:/tmp
@@ -24,6 +27,7 @@ services:
 
     nginx:
        build: ./nginx
+       container_name: website-nir_nginx
        ports:
        - "443:443"
        volumes:
