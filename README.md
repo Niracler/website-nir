@@ -21,11 +21,12 @@ web方面的轮子 django + nginx + mysql + docker + gunicorn
 docker-compose up -d db     #启动数据库
 python3 manage.py migrate
 python3 manage.py makemigrations
+python3 manage.py migrate
 python3 manage.py createsuperuser # 创建超级用户
 ```
  - 启动项目
 ```bash
-manage.py runserver 8000
+python3 manage.py runserver 8000
 ```
 
 ## docker部署说明
