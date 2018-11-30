@@ -8,7 +8,7 @@ services:
           MYSQL_ROOT_PASSWORD: 123456
        volumes:
          - /srv/db:/var/lib/mysql
-         - ./db:/db
+         - ./db/mysql:/etc/mysql
        restart: always
        ports:
          - "3333:3306" # 将3306映射到3333, 供其他容器使用
