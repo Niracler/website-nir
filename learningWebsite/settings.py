@@ -32,6 +32,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# 用于替换系统用户
+AUTH_USER_MOBEL = 'user.UserProfile'
+
 
 # Application definition
 
