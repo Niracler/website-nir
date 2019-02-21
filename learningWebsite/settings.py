@@ -33,7 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 # 用于替换系统用户
-AUTH_USER_MOBEL = 'user.UserProfile'
+AUTH_USER_MODEL = 'users.UserProfile'
 
 
 # Application definition
@@ -45,6 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'goods.apps.GoodsConfig',
+    'users.apps.UsersConfig',
+    'DjangoUeditor',
+    'trade.apps.TradeConfig'
 ]
 
 MIDDLEWARE = [
