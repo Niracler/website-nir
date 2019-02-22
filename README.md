@@ -38,7 +38,7 @@ make install
 npm test
 ```
 
-## Release History
+## 更新
 
 * 0.2.1
     * CHANGE: Update docs (module code remains unchanged)
@@ -61,7 +61,7 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 
 [https://github.com/yourname/github-link](https://github.com/dbader/)
 
-## Contributing
+## 贡献
 
 1. Fork it (<https://github.com/yourname/yourproject/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
@@ -79,3 +79,6 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 
 ## 依赖包
 pillow 图片上传下载
+
+## 参考文献
+[Django 2.0 加xadmin踩的坑](https://blog.csdn.net/Cand6oy/article/details/79243166)
