@@ -21,13 +21,16 @@ from learningWebsite.settings import MEDIA_ROOT
 from django.views.static import serve
 from goods.views import GoodsListView
 from rest_framework.documentation import include_docs_urls
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(r'goods', GoodsListView)
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
     url(r'^api-auth/', include('rest_framework.urls'), name='rest_framework'),
-
+    url(r'^', include(router.urls)),
     # 商品列表页
-    path('goods/', GoodsListView.as_view(), name="goods-list"),
     url(r'docs/', include_docs_urls(title="暮雪生鲜")),
 ]
