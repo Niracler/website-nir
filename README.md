@@ -9,7 +9,7 @@ One to two paragraph statement about your product and what it does.
 
 ![](header.png)
 
-## Installation
+## 安装
 
 OS X & Linux:
 
@@ -23,13 +23,13 @@ Windows:
 edit autoexec.bat
 ```
 
-## Usage example
+## 用例
 
 A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
 
 _For more examples and usage, please refer to the [Wiki][wiki]._
 
-## Development setup
+## 部署
 
 Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
 
