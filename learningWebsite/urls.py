@@ -19,12 +19,12 @@ import xadmin
 
 from learningWebsite.settings import MEDIA_ROOT
 from django.views.static import serve
-from goods.views import GoodsListView
+from goods.views import GoodsListViewSet
 from rest_framework.documentation import include_docs_urls
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'goods', GoodsListView)
+router.register(r'goods', GoodsListViewSet)
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),

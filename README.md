@@ -1,4 +1,4 @@
-# Product Name
+# 学习 Django REST framwork
 > Short blurb about what your product does.
 
 [![NPM Version][npm-image]][npm-url]
@@ -8,6 +8,21 @@
 One to two paragraph statement about your product and what it does.
 
 ![](header.png)
+
+## 笔记
+- GenericViewSet(viewset) -drf  
+    - GenericAPIView      -drf  
+    - APIView         -drf  
+    - View        -django  
+
+- mixin
+    - CreateModelMixin  
+    - ListModelMixin  
+    - UpdateModelMixin  
+    - RetrieveModelMixin  
+    - DestoryModelMixin  
+            
+
 
 ## 安装
 
