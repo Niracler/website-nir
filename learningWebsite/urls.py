@@ -19,8 +19,12 @@ import xadmin
 
 from learningWebsite.settings import MEDIA_ROOT
 from django.views.static import serve
+from goods.views_base import GoodsListView
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
+
+    # 商品列表页
+    url(r'goods/$', GoodsListView.as_view(), name="goods-list")
 ]
