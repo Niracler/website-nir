@@ -11,7 +11,6 @@ class GoodsListView(View):
         :return:
         """
 
-        json_list = []
         goods = Goods.objects.all()[:10]
 
         from django.core import serializers
