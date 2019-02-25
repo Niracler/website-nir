@@ -96,5 +96,9 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 pillow 图片上传下载
 
 ## 参考文献
+[Django REST framework](https://www.django-rest-framework.org/)
+[Django](https://docs.djangoproject.com/zh-hans/2.1/)
+[django-filter](https://django-filter.readthedocs.io/en/master/)
+
 [Django 2.0 加xadmin踩的坑](https://blog.csdn.net/Cand6oy/article/details/79243166)
 [Django 报错：__str__ returned non-string (type NoneType) 如何解决？](https://blog.csdn.net/l_womeiyoumingzi/article/details/81114384)
