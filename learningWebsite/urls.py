@@ -31,7 +31,7 @@ urlpatterns = [
     path('xadmin/', xadmin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
     url(r'^api-auth/', include('rest_framework.urls'), name='rest_framework'),
-    url(r'^', include(router.urls)),
+    url(r'^api/', include(router.urls)),
     # 商品列表页
     url(r'docs/', include_docs_urls(title="暮雪生鲜")),
 ]

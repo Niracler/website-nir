@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'goods.apps.GoodsConfig',
     'users.apps.UsersConfig',
-    'DjangoUeditor',
     'trade.apps.TradeConfig',
     'user_operation.apps.UserOperationConfig',
     'xadmin',
