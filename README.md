@@ -46,11 +46,12 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
 
 ## 部署
 
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
 ```sh
-make install
-npm test
+python manage.py createsuperuser
+
+python manage.py makemigrations
+
+python manage.py migrate
 ```
 
 ## 更新

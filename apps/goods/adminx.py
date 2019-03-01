@@ -11,8 +11,7 @@ class GoodsAdmin(object):
     search_fields = ['name', ]
     list_editable = ["is_hot", ]
     list_filter = ["name", "click_num", "sold_num", "fav_num", "goods_num", "market_price",
-                   "shop_price", "is_new", "is_hot", "add_time", "category_name"]
-    style_fields = {"goods_desc": "ueditor"}
+                   "shop_price", "is_new", "is_hot", "add_time"]
 
     class GoodsImagesInline(object):
         model = GoodsImage

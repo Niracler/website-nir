@@ -1,6 +1,5 @@
 from datetime import datetime
 from django.db import models
-from DjangoUeditor.models import UEditorField
 
 
 class GoodsCategory(models.Model):
@@ -55,8 +54,7 @@ class Goods(models.Model):
     market_price = models.IntegerField(default=0, verbose_name="市场价格")
     shop_price = models.FloatField(default=0, verbose_name="本店价格")
     goods_brief = models.TextField(verbose_name="商品简短描述")
-    goods_desc = UEditorField(verbose_name=u"内容", imagePath="goods/images/", width=1000, height=300,
-                              filePath="good/files/", default='')
+    goods_desc = models.TextField(verbose_name="内容")
     ship_free = models.BooleanField(default=True, verbose_name="是否承担运费")
     is_new = models.BooleanField(default=False, verbose_name="是否新品")
     is_hot = models.BooleanField(default=False, verbose_name="是否热销")
