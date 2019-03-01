@@ -20,18 +20,24 @@ import xadmin
 from learningWebsite.settings import MEDIA_ROOT
 from django.views.static import serve
 from goods.views import GoodsListViewSet, CategoryViewSet
+from users.views import SmsCodeViewSet
 from rest_framework.documentation import include_docs_urls
 from rest_framework.routers import DefaultRouter
+from rest_framework.authtoken import views
+from rest_framework_jwt.views import obtain_jwt_token
 
 router = DefaultRouter()
 router.register(r'goods', GoodsListViewSet, base_name="goods")
 router.register(r'categorys', CategoryViewSet, base_name="categorys")
+router.register(r'codes', SmsCodeViewSet, base_name="codes")
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
     url(r'^api-auth/', include('rest_framework.urls'), name='rest_framework'),
+    url(r'^api-token-auth/', views.obtain_auth_token, name='obtain_auth_token'),
     url(r'^', include(router.urls)),
+    url(r'^login/', obtain_jwt_token),
     # 商品列表页
     url(r'docs/', include_docs_urls(title="暮雪生鲜")),
 ]
