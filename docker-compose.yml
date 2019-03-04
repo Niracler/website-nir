@@ -1,0 +1,14 @@
+version: "2"
+services:
+    db:
+       image: mysql:5
+       container_name: learn_db
+       environment:
+          MYSQL_DATABASE: dataname
+          MYSQL_ROOT_PASSWORD: 123456
+       volumes:
+         - ./db/srv/db:/var/lib/mysql
+         - ./db/mysql:/etc/mysql
+       restart: always
+       ports:
+         - "3335:3306" # 将3306映射到3333, 供其他容器使用
